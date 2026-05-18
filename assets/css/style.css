@@ -1,0 +1,84 @@
+/* ============================================================
+   style.css — Minimal custom CSS
+   Tailwind handles 95% of styling. This file covers only
+   things Tailwind can't do with utility classes alone.
+   ============================================================ */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Apply fonts globally */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #F8F5F0;
+  color: #1E2A2A;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Hero section — full-viewport background image with overlay */
+.hero-section {
+  position: relative;
+  min-height: 92vh;
+  background-size: cover;
+  background-position: center;
+  background-color: #0D5C63; /* fallback if image doesn't load */
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 92, 99, 0.88) 0%,
+    rgba(13, 92, 99, 0.65) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Gallery lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.lightbox.hidden {
+  display: none;
+}
+
+/* FAQ accordion — smooth height transition */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer.open {
+  max-height: 300px;
+}
+
+/* Smooth page scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom teal color shortcuts (used alongside Tailwind) */
+.text-teal-school   { color: #0D5C63; }
+.bg-teal-school     { background-color: #0D5C63; }
+.text-gold-school   { color: #C8962B; }
+.bg-gold-school     { background-color: #C8962B; }
+.border-gold-school { border-color: #C8962B; }
