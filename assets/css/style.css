@@ -82,3 +82,93 @@ html {
 .text-gold-school   { color: #C8962B; }
 .bg-gold-school     { background-color: #C8962B; }
 .border-gold-school { border-color: #C8962B; }
+
+.site-nav {
+  background: #123d39;
+  box-shadow: 0 2px 14px rgba(21, 41, 35, 0.16);
+}
+
+.site-nav-inner,
+.site-footer-inner {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.site-nav-inner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.site-brand,
+.site-brand-name,
+.site-footer-brand {
+  display: flex;
+  align-items: center;
+}
+
+.site-brand { gap: 12px; color: #fff; text-decoration: none; }
+.site-brand-logo { width: 46px; height: 46px; object-fit: cover; border-radius: 50%; }
+.site-brand-name { flex-direction: column; align-items: flex-start; gap: 2px; font-size: 14px; font-weight: 700; line-height: 1.15; }
+.site-brand-name span:last-child { color: #e6c97c; font-size: 11px; font-weight: 500; }
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 26px);
+  font-size: 13px;
+}
+
+.site-nav-links a,
+.site-mobile-menu a { text-decoration: none; }
+.site-nav-cta { padding: 11px 15px; background: #e5bd5a; color: #193f39; font-weight: 700; }
+.site-nav-cta:hover { background: #f0d17d; color: #193f39; }
+.site-nav-toggle { display: none; color: #fff; background: transparent; border: 0; padding: 8px; }
+.site-nav-toggle svg { display: block; width: 25px; height: 25px; }
+.site-mobile-menu[hidden] { display: none; }
+
+.site-footer { margin-top: 64px; background: #123d39; color: #fff; }
+.site-footer-inner { padding-block: 48px; display: grid; grid-template-columns: 1.2fr 0.8fr 1.2fr; gap: 44px; }
+.site-footer-brand { gap: 12px; margin-bottom: 14px; }
+.site-footer-brand img { width: 42px; height: 42px; object-fit: cover; border-radius: 50%; }
+.site-footer-title { font-size: 14px; font-weight: 700; }
+.site-footer-tagline { margin-top: 3px; color: #e6c97c; font-size: 12px; }
+.site-footer-copy { max-width: 340px; color: #c4d5cd; font-size: 13px; line-height: 1.7; }
+.site-footer-heading { margin-bottom: 14px; color: #e6c97c; font-size: 12px; text-transform: uppercase; }
+.site-footer-links { display: grid; gap: 10px; margin: 0; padding: 0; color: #c4d5cd; font-size: 13px; line-height: 1.6; list-style: none; }
+.site-footer-links a { color: inherit; text-decoration: none; }
+.site-footer-links a:hover { color: #f0d17d; }
+.site-footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.12); padding: 15px 24px; color: #b9ccc3; text-align: center; font-size: 11px; }
+
+.home-pillars { background: #1d5148; color: #fff; }
+.home-pillars-inner { width: min(1180px, calc(100% - 48px)); margin-inline: auto; padding-block: 25px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+.home-pillar-title { color: #e6c97c; font-family: 'Playfair Display', Georgia, serif; font-size: 23px; }
+.home-pillar-detail { margin-top: 4px; color: #d1dfd9; font-size: 12px; }
+.programme-image { height: 180px; overflow: hidden; background: #e4e8df; }
+.programme-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 400ms ease; }
+.group:hover .programme-image img { transform: scale(1.035); }
+.director-image { width: 190px; height: 190px; flex: 0 0 auto; overflow: hidden; border-radius: 50%; background: #e4e8df; }
+.director-image img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 900px) {
+  .site-nav-inner { min-height: 68px; }
+  .site-nav-links { gap: 12px; font-size: 12px; }
+  .site-nav-cta { padding: 9px 11px; }
+}
+
+@media (max-width: 760px) {
+  .site-nav-inner,
+  .site-footer-inner,
+  .home-pillars-inner { width: min(100% - 32px, 560px); }
+  .site-nav-links { display: none; }
+  .site-nav-toggle { display: block; }
+  .site-mobile-menu { display: grid; gap: 0; padding: 0 16px 12px; background: #123d39; }
+  .site-mobile-menu a { padding: 12px 8px; color: #fff; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 14px; }
+  .site-mobile-menu a:last-child { color: #e6c97c; font-weight: 700; }
+  .site-footer-inner { grid-template-columns: 1fr; gap: 28px; padding-block: 36px; }
+  .home-pillars-inner { grid-template-columns: repeat(2, 1fr); gap: 22px 16px; }
+  .programme-image { height: 155px; }
+  .director-image { width: 150px; height: 150px; }
+}

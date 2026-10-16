@@ -1,93 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery — Ananthamurthy International School</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/css/style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Stories &amp; Gallery — Ananthamurthy International School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/editorial.css" />
 </head>
-<body class="bg-stone-50">
-  <div id="navbar-placeholder"></div>
+<body>
+  <header class="site"><div id="navbar-placeholder"></div></header>
 
-  <!-- Hero -->
-  <section class="hero-section" style="background-image: url('https://ananthamurthyacademy.org/images/banner_004.jpg'); min-height: 35vh;">
-    <div class="hero-overlay"></div>
-    <div class="hero-content max-w-6xl mx-auto px-6 py-14 text-white">
-      <nav class="text-teal-200 text-sm mb-4">
-        <a href="index.html" class="hover:text-yellow-300">Home</a>
-        <span class="mx-2">›</span>
-        <span class="text-white font-semibold">Gallery</span>
-      </nav>
-      <h1 class="text-3xl md:text-5xl font-bold mb-3">Gallery</h1>
-      <p class="text-teal-100 text-lg">Life at Ananthamurthy International School.</p>
+  <div class="page-hero-photo">
+    <img src="assets/images/images/banner7.jpg" alt="Ananthamurthy International School campus" />
+  </div>
+  <div class="wrap page-hero-copy">
+    <p class="crumb"><a href="index.html">Home</a> › Stories &amp; Gallery</p>
+    <h1>Stories &amp; Gallery</h1>
+    <p class="lede">Life at Ananthamurthy International School.</p>
+  </div>
+
+  <section class="section" style="border-top:none; padding-top:0;">
+    <div class="wrap">
+      <div class="filters" id="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="campus">Campus</button>
+        <button class="filter-btn" data-filter="events">Events</button>
+        <button class="filter-btn" data-filter="programmes">Programmes</button>
+        <button class="filter-btn" data-filter="keraleeyam">Keraleeyam</button>
+        <button class="filter-btn" data-filter="community">Community</button>
+      </div>
+      <div class="gallery-grid" id="gallery-grid"></div>
     </div>
   </section>
 
-  <div class="max-w-6xl mx-auto px-4 py-16">
-
-    <!-- Filter buttons -->
-    <div class="flex flex-wrap gap-3 mb-8" id="filter-buttons">
-      <button class="filter-btn active bg-teal-800 text-white px-5 py-2 rounded-full text-sm font-semibold" data-filter="all">All</button>
-      <button class="filter-btn bg-white border border-teal-200 text-teal-800 hover:bg-teal-50 px-5 py-2 rounded-full text-sm font-semibold" data-filter="campus">Campus</button>
-      <button class="filter-btn bg-white border border-teal-200 text-teal-800 hover:bg-teal-50 px-5 py-2 rounded-full text-sm font-semibold" data-filter="events">Events</button>
-      <button class="filter-btn bg-white border border-teal-200 text-teal-800 hover:bg-teal-50 px-5 py-2 rounded-full text-sm font-semibold" data-filter="keraleeyam">Keraleeyam</button>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head row">
+        <div>
+          <p class="eyebrow">School Life</p>
+          <h2>Videos</h2>
+        </div>
+        <a class="textlink" href="https://www.youtube.com/@ananthamurthyinternational4855" target="_blank" rel="noreferrer">More on the school's YouTube channel →</a>
+      </div>
+      <div class="video-grid" id="video-grid"></div>
     </div>
+  </section>
 
-    <!-- Image grid -->
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-grid">
-      <div class="gallery-item" data-category="campus">
-        <img src="https://ananthamurthyacademy.org/images/banner-01.jpg"
-             alt="School campus" class="w-full h-48 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity shadow-sm" />
-      </div>
-      <div class="gallery-item" data-category="campus">
-        <img src="https://ananthamurthyacademy.org/images/banner_001.jpg"
-             alt="School campus" class="w-full h-48 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity shadow-sm" />
-      </div>
-      <div class="gallery-item" data-category="campus">
-        <img src="https://ananthamurthyacademy.org/images/banner_002.JPG"
-             alt="School campus" class="w-full h-48 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity shadow-sm" />
-      </div>
-      <div class="gallery-item" data-category="campus">
-        <img src="https://ananthamurthyacademy.org/images/banner_003.jpg"
-             alt="School campus" class="w-full h-48 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity shadow-sm" />
-      </div>
-      <div class="gallery-item" data-category="campus">
-        <img src="https://ananthamurthyacademy.org/images/banner_004.jpg"
-             alt="School campus" class="w-full h-48 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity shadow-sm" />
-      </div>
-      <div class="gallery-item" data-category="campus">
-        <img src="https://ananthamurthyacademy.org/images/banner_005.jpg"
-             alt="School campus" class="w-full h-48 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity shadow-sm" />
-      </div>
-      <div class="gallery-item" data-category="events">
-        <img src="https://ananthamurthyacademy.org/events/thumbs/clap-events-ananthamurthy-academy.jpg"
-             alt="CLAP Programme" class="w-full h-48 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity shadow-sm" />
-      </div>
-      <div class="gallery-item" data-category="keraleeyam">
-        <img src="https://ananthamurthyacademy.org/events/thumbs/keraleeyam.jpg"
-             alt="Keraleeyam" class="w-full h-48 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity shadow-sm" />
-      </div>
-      <div class="gallery-item" data-category="campus">
-        <img src="https://ananthamurthyacademy.org/images/banner-04.jpg"
-             alt="School campus" class="w-full h-48 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity shadow-sm" />
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Lightbox overlay (same pattern as screen-break-reminder app) -->
-  <div class="lightbox hidden" id="lightbox">
-    <div class="relative max-w-4xl w-full">
-      <button id="lightbox-close"
-              class="absolute -top-10 right-0 text-white text-3xl font-light hover:text-yellow-300 leading-none">✕</button>
-      <img id="lightbox-img" src="" alt="" class="w-full max-h-screen object-contain rounded-xl shadow-2xl" />
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lightbox-inner">
+      <button id="lightbox-close" aria-label="Close">✕</button>
+      <img id="lightbox-img" src="" alt="" />
     </div>
   </div>
 
-  <div id="footer-placeholder"></div>
-  <script src="assets/js/components.js"></script>
+  <footer class="site"><div id="footer-placeholder"></div></footer>
+  <script src="assets/js/editorial-nav.js?v=20261016"></script>
   <script>
+    const galleryPhotos = [
+      { src: 'assets/images/images/banner1.jpg', alt: 'Ananthamurthy school campus', category: 'campus' },
+      { src: 'assets/images/images/banner2.jpg', alt: 'School grounds', category: 'campus' },
+      { src: 'assets/images/images/banner3.jpg', alt: 'School building and grounds', category: 'campus' },
+      { src: 'assets/images/images/banner4.jpg', alt: 'School campus', category: 'campus' },
+      { src: 'assets/images/images/banner5.jpg', alt: 'Learning spaces at school', category: 'campus' },
+      { src: 'assets/images/images/banner6.jpg', alt: 'School grounds', category: 'campus' },
+      { src: 'assets/images/images/banner7.jpg', alt: 'School campus', category: 'campus' },
+      { src: 'assets/images/images/banner8.jpg', alt: 'School building', category: 'campus' },
+      { src: 'assets/images/images/banner9.jpg', alt: 'School campus', category: 'campus' },
+      {
+        src: 'assets/images/external/padmanabhapuram-palace-wikimedia.jpg',
+        alt: 'Padmanabhapuram Palace, a Travancore-era heritage site visited as part of Keraleeyam',
+        category: 'keraleeyam',
+        credit: 'Reference photo, not the school’s own — Timothy A. Gonsalves / <a href="https://commons.wikimedia.org/wiki/File:Forecourt_Padmanabhapuram_Palace_Mar24_A7C_10099.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a>, CC BY-SA 4.0'
+      },
+      { src: 'assets/images/images/kalari_01.jpg', alt: 'Kalarippayattu training', category: 'programmes' },
+      { src: 'assets/images/images/kalari_02.jpg', alt: 'Kalarippayattu training', category: 'programmes' },
+      { src: 'assets/images/images/kalari_03.jpg', alt: 'Kalarippayattu training', category: 'programmes' },
+      { src: 'assets/images/images/Picture1.png', alt: 'School music programme', category: 'programmes' },
+      { src: 'assets/images/images/Picture2.jpg', alt: 'School music programme', category: 'programmes' },
+      { src: 'assets/images/events/clap-events-ananthamurthy-academy.jpg', alt: 'CLAP school event', category: 'community' },
+      { src: 'assets/images/images/patron-cochin-shipyard.jpg', alt: 'Cochin Shipyard patron', category: 'community' },
+      { src: 'assets/images/images/patron-manappuram-foundation.jpg', alt: 'Manappuram Foundation patron', category: 'community' },
+      { src: 'assets/images/images/patron-new-rajasthan-marbles.jpg', alt: 'New Rajasthan Marbles patron', category: 'community' },
+      { src: 'assets/images/images/with_our_leading_light_ananthamurthy_ananthamurthy-academy.jpg', alt: 'Ananthamurthy, the school’s leading light', category: 'community' }
+    ];
+
+    const galleryGrid = document.getElementById('gallery-grid');
+    galleryPhotos.forEach((photo) => {
+      const item = document.createElement('figure');
+      item.className = 'gallery-item';
+      item.dataset.category = photo.category;
+      item.innerHTML = `
+        <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+        ${photo.credit ? `<figcaption>${photo.credit}</figcaption>` : ''}
+      `;
+      galleryGrid.append(item);
+    });
+
+    // Videos from the school's official YouTube channel (Ananthamurthy International),
+    // verified individually — titles below are each video's real published YouTube title.
+    const schoolVideos = [
+      { id: '22Z2lmA7twg', title: "Kalarippayattu flexibility exercises at Crescendo '25" },
+      { id: '8UduQR_frCQ', title: "“Blowin’ in the Wind” (Bob Dylan cover) — a performance at Crescendo '25" },
+      { id: 'ZeEWRcH7nzs', title: "Stage 6 presents the poem ‘Athirum Thala’ by Kavalam Narayana Panicker" },
+      { id: 'yyhrRGhxfVk', title: 'Ona Pookkalam — the Onam flower carpet' },
+      { id: 'Kn0fB2erZCc', title: 'A Keraleeyam visit to the Kottangal Valiya Padayani' },
+      { id: 'F8R7vYNsFaQ', title: 'A Keraleeyam visit to Padmanabhapuram Palace' },
+      { id: 'Py9iLYWnADc', title: "Students perform 'The Comedy of Errors'" },
+      { id: 'TMpjvZ7kUAg', title: 'Cambridge Stage 2–3 science: the life cycle of flowering plants' },
+    ];
+
+    const videoGrid = document.getElementById('video-grid');
+    schoolVideos.forEach((video) => {
+      const item = document.createElement('figure');
+      item.className = 'video-card';
+      item.innerHTML = `
+        <div class="video-frame">
+          <iframe loading="lazy"
+                  src="https://www.youtube-nocookie.com/embed/${video.id}"
+                  title="${video.title}" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+        </div>
+        <figcaption>${video.title}</figcaption>
+      `;
+      videoGrid.append(item);
+    });
+
     // ===== LIGHTBOX =====
     const lightbox     = document.getElementById('lightbox');
     const lightboxImg  = document.getElementById('lightbox-img');
@@ -97,11 +137,11 @@
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
-        lightbox.classList.remove('hidden');
+        lightbox.hidden = false;
       });
     });
 
-    function closeLightbox() { lightbox.classList.add('hidden'); }
+    function closeLightbox() { lightbox.hidden = true; }
     closeBtn.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
@@ -111,17 +151,11 @@
       btn.addEventListener('click', () => {
         const filter = btn.dataset.filter;
 
-        // Update active button style
-        document.querySelectorAll('.filter-btn').forEach(b => {
-          b.classList.remove('bg-teal-800', 'text-white');
-          b.classList.add('bg-white', 'border', 'border-teal-200', 'text-teal-800');
-        });
-        btn.classList.add('bg-teal-800', 'text-white');
-        btn.classList.remove('bg-white', 'border', 'border-teal-200', 'text-teal-800');
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b === btn));
 
         // Show / hide items
         document.querySelectorAll('.gallery-item').forEach(item => {
-          item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
+          item.style.display = (filter === 'all' || item.dataset.category === filter) ? '' : 'none';
         });
       });
     });
