@@ -201,12 +201,12 @@
         const text = (k) => (data.get(k) || '').toString().trim();
         jobs.push(fetch(cfg.supabaseUrl + '/rest/v1/inquiries', {
           method: 'POST',
-          headers: {
+          headers: Object.assign({
             'Content-Type': 'application/json',
             'apikey': cfg.supabaseAnonKey,
-            'Authorization': 'Bearer ' + cfg.supabaseAnonKey,
             'Prefer': 'return=minimal'
-          },
+          // Older JWT-style anon keys also go in Authorization; newer "sb_publishable_" keys must not.
+          }, cfg.supabaseAnonKey.startsWith('eyJ') ? { 'Authorization': 'Bearer ' + cfg.supabaseAnonKey } : {}),
           body: JSON.stringify({
             parent_name: text('parent_name'),
             student_name: text('student_name'),
