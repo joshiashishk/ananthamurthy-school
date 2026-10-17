@@ -103,6 +103,8 @@
               <div class="field"><label>Email Address *</label><input type="email" name="email" required /></div>
               <div class="field full"><label>How did you hear about us?</label><select name="referral_source"><option value="">Select…</option><option>Word of mouth / Friend or family</option><option>Google search</option><option>Social media</option><option>School event or open day</option><option>Newspaper or advertisement</option><option>Other</option></select></div>
               <div class="field full"><label>Message or Questions</label><textarea name="message" rows="3" placeholder="Any specific questions or additional context…"></textarea></div>
+              <div class="field full check"><label><input type="checkbox" name="consent" required /> <span>I agree that the school may store these details and use them to respond to my inquiry. *</span></label></div>
+              <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
               <div class="full"><button type="submit" id="submit-btn" class="btn btn-ink">Submit Inquiry</button></div>
               <div class="full form-msg ok" id="form-success" hidden>Thank you! We'll be in touch within 2 working days.</div>
               <div class="full form-msg err" id="form-error" hidden>Something went wrong. Please try again or call us directly.</div>
@@ -159,6 +161,7 @@
 
   <footer class="site"><div id="footer-placeholder"></div></footer>
   <script src="assets/js/editorial-nav.js?v=20261016"></script>
+  <script src="assets/js/config.js?v=20261017"></script>
   <script>
     document.querySelectorAll('.faq-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -174,29 +177,62 @@
       });
     });
 
-    // Admissions form — AJAX submission with Formspree
+    // Admissions form: saves to the school database (if configured) and emails via Formspree.
+    // The inquiry counts as sent if either one succeeds.
     document.getElementById('admissions-form').addEventListener('submit', async (e) => {
       e.preventDefault();
+      const form = e.target;
       const btn = document.getElementById('submit-btn');
       const success = document.getElementById('form-success');
       const error = document.getElementById('form-error');
+      const data = new FormData(form);
+
+      // Spam trap: real visitors never see or fill this field.
+      if (data.get('website')) { success.hidden = false; return; }
+
       btn.textContent = 'Sending…';
       btn.disabled = true;
-      try {
-        const response = await fetch(e.target.action, {
+
+      const cfg = window.SCHOOL_CONFIG || {};
+      const jobs = [
+        fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      ];
+      if (cfg.supabaseUrl && cfg.supabaseAnonKey) {
+        const text = (k) => (data.get(k) || '').toString().trim();
+        jobs.push(fetch(cfg.supabaseUrl + '/rest/v1/inquiries', {
           method: 'POST',
-          body: new FormData(e.target),
-          headers: { 'Accept': 'application/json' },
-        });
-        if (response.ok) {
-          e.target.reset();
-          success.hidden = false;
-          error.hidden = true;
-          btn.textContent = 'Submitted ✓';
-        } else {
-          throw new Error('Server error');
-        }
-      } catch {
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': cfg.supabaseAnonKey,
+            'Authorization': 'Bearer ' + cfg.supabaseAnonKey,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({
+            parent_name: text('parent_name'),
+            student_name: text('student_name'),
+            date_of_birth: text('date_of_birth') || null,
+            class_applying: text('class_applying'),
+            phone: text('phone'),
+            email: text('email'),
+            referral_source: text('referral_source') || null,
+            message: text('message') || null,
+            consent: true
+          })
+        }));
+      }
+
+      const results = await Promise.allSettled(jobs);
+      const ok = results.some(r => r.status === 'fulfilled' && r.value.ok);
+      results.forEach((r, i) => {
+        if (r.status === 'rejected' || !r.value.ok) console.warn(i === 0 ? 'Email send failed' : 'Database save failed', r);
+      });
+
+      if (ok) {
+        form.reset();
+        success.hidden = false;
+        error.hidden = true;
+        btn.textContent = 'Submitted ✓';
+      } else {
         error.hidden = false;
         success.hidden = true;
         btn.textContent = 'Submit Inquiry';
