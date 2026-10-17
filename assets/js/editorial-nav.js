@@ -15,6 +15,7 @@ function getNavbarHTML() {
     ['academics.html', 'Learning'],
     ['programs.html', 'Programmes'],
     ['gallery.html', 'Stories &amp; Gallery'],
+    ['admissions.html', 'Admissions'],
     ['contact.html', 'Contact'],
   ];
 
@@ -48,20 +49,23 @@ function getFooterHTML() {
             <img src="assets/images/images/logo_03.jpg" alt="" />
             <span class="foot-brand-text">Ananthamurthy International School</span>
           </div>
-          <p>A school combining cooperative learning with Kerala's language, history, and cultural heritage.</p>
+          <p>A school where values come first, combining cooperative learning with Kerala's language, history, and cultural heritage.</p>
         </div>
         <div>
           <h4>Explore</h4>
           <ul>
-            <li><a href="about.html">Our school</a></li>
-            <li><a href="academics.html">Curriculum &amp; learning</a></li>
-            <li><a href="programs.html">Student programmes</a></li>
-            <li><a href="gallery.html">Stories &amp; gallery</a></li>
-            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="about.html">Our School</a></li>
+            <li><a href="academics.html">Learning</a></li>
+            <li><a href="programs.html">Programmes</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="facilities.html">Facilities</a></li>
+            <li><a href="gallery.html">Stories &amp; Gallery</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div>
-          <h4>Visit</h4>
+          <h4>Get in Touch</h4>
           <ul>
             <li>SNRA No. A-4, Surya Nagar, near Central Polytechnic, Vattiyoorkavu, Thiruvananthapuram 695 013</li>
             <li><a href="tel:+914712366166">+91 471 236 6166</a> &middot; <a href="tel:+919605080597">+91 9605 080 597</a></li>
