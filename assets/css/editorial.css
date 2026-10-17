@@ -274,6 +274,27 @@ button.btn:disabled{opacity:.6; cursor:default;}
 .person p{font-size:13.5px; margin:0; line-height:1.6;}
 .person .soon{font-style:italic; color:var(--ink-faint);}
 
+/* ===== APPROACH TO LEARNING (5E method + Six Cs outcomes, Learning page) ===== */
+.approach .section-head h2{font-weight:700;}
+.o1{display:grid; grid-template-columns:1fr 56px 1.35fr; gap:0; align-items:start;}
+.o1-h{font-size:13px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink); margin:0 0 20px; padding-bottom:10px; border-bottom:2px solid var(--accent);}
+.o1-arrow{align-self:center; text-align:center; font-size:30px; color:var(--accent);}
+.timeline{list-style:none; margin:0; padding:0; position:relative;}
+.timeline::before{content:""; position:absolute; left:17px; top:18px; bottom:18px; width:1px; background:var(--rule);}
+.timeline li{display:flex; gap:16px; padding:0 0 22px; position:relative;}
+.timeline li:last-child{padding-bottom:0;}
+.dot{flex:0 0 35px; height:35px; border-radius:50%; background:var(--surface); border:1px solid var(--accent); color:var(--accent-ink); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-style:italic; font-weight:600; font-size:15px; position:relative; z-index:1;}
+.timeline h4{margin:5px 0 3px; font-family:'Fraunces',serif; font-size:18px; font-weight:700; color:var(--ink);}
+.timeline p{margin:0; font-size:13.5px; line-height:1.5;}
+.cgrid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); border:1px solid var(--rule);}
+.cc{background:var(--surface); padding:20px 20px 22px;}
+.cc .ico{color:var(--accent-ink); margin-bottom:10px;}
+.cc h4{margin:0 0 5px; font-family:'Fraunces',serif; font-size:17.5px; font-weight:700; color:var(--ink);}
+.cc p{margin:0; font-size:13px; line-height:1.55;}
+.o1-foot{margin:30px 0 0; padding-top:18px; border-top:1px solid var(--rule); font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:17px; color:var(--ink); text-align:center;}
+@media (max-width:900px){.o1{grid-template-columns:1fr; gap:28px;} .o1-arrow{transform:rotate(90deg); font-size:26px;}}
+@media (max-width:560px){.cgrid{grid-template-columns:1fr;}}
+
 /* ===== FOOTER ===== */
 footer.site{border-top:1px solid var(--rule); padding-block:48px 28px; background:var(--paper-deep);}
 .foot-grid{display:grid; grid-template-columns:1.3fr 1fr 1.2fr; gap:40px;}
