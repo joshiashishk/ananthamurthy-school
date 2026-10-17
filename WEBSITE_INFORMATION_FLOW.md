@@ -129,7 +129,7 @@ flowchart TD
 
 | Page | Information available | Media and onward links |
 | --- | --- | --- |
-| Home (`/`, `index.html`) | Welcome, executive director's message, the Roots & Wings idea, school introduction, and entry points to the site's learning and programme sections. | Nine homepage banners and school logo; links into the main sections, patrons, videos, contact, and the director's letter. |
+| Home (`/`, `index.html`) | Welcome, executive director's message, the Wings & Roots idea, school introduction, and entry points to the site's learning and programme sections. | Nine homepage banners and school logo; links into the main sections, patrons, videos, contact, and the director's letter. |
 | About (`about-us.html`) | School overview and the executive director's letter; cooperative learning, the Cambridge syllabus, Kerala heritage, compulsory activities, and the school's charitable trust are described. | Director/Ananthamurthy image; contact details. |
 | School Mission (`school-mission.html`) | The school's purpose and six aims covering achievement, joyful learning, community, Kerala heritage, citizenship, and environmental care. | Links back to the shared site navigation. |
 | Curriculum & Textbooks (`curriculum-textbooks.html`) | Cambridge Primary and Lower Secondary, the blend with Kerala/Indian state curriculum, social constructivism, assessment, and parent guidance about textbooks and tutoring. | Curriculum graphic and external curriculum/reference links. |
