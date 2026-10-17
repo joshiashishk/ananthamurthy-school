@@ -32,7 +32,7 @@ img{max-width:100%; display:block;}
 
 h1,h2,h3{
   font-family:'Fraunces', Georgia, serif;
-  font-weight:600;
+  font-weight:700;
   color:var(--ink);
   text-wrap:balance;
   margin:0;
